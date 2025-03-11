@@ -3,58 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <style>
-        .completed {
-            text-decoration: line-through;
-            color: gray;
-        }
-        button {
-            margin-left: 10px;
-            padding: 5px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <title>Sports News</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>To-Do List</h1>
-    <input type="text" id="task" placeholder="Enter a task">
-    <button onclick="addTask()">Add Task</button>
-    <ul id="taskList"></ul>
+    <header>
+        <h1>Sports News</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="greeting">Welcome to Sports News</h2>
+        <p>Get the latest updates on your favorite sports, teams, and matches.</p>
 
-    <script>
-        function addTask() {
-            let taskInput = document.getElementById("task");
-            let taskText = taskInput.value;
-            if (taskText.trim() !== "") {
-                let li = document.createElement("li");
-                li.innerText = taskText;
+        <!-- Basketball News Section -->
+        <section class="news">
+            <h3>Latest Basketball News</h3>
+            <article>
+                <h4>Team A wins the championship</h4>
+                <p>In an exciting final, Team A claimed the championship title with a 112-105 victory over Team B. The match featured a thrilling comeback in the final minutes, with the star player of Team A scoring 45 points.</p>
+            </article>
+            <article>
+                <h4>Player X sets new record</h4>
+                <p>Player X has set a new personal and league record with 60 points in a single game. Fans are celebrating the new achievement, marking a historic moment in the sport.</p>
+            </article>
+            <article>
+                <h4>Team C signs new player</h4>
+                <p>Team C has made a major signing, bringing in player Y from overseas. The team is excited about this new addition to the roster, hoping to improve their chances for the upcoming season.</p>
+            </article>
+        </section>
 
-                // Create delete button
-                let deleteButton = document.createElement("button");
-                deleteButton.innerText = "Delete";
-                deleteButton.onclick = function() {
-                    li.remove(); // Removes task when clicked
-                };
-
-                // Mark task as completed when clicked
-                li.onclick = function() {
-                    li.classList.toggle("completed");
-                };
-
-                // Append delete button to task
-                li.appendChild(deleteButton);
-
-                // Append task to task list
-                document.getElementById("taskList").appendChild(li);
-
-                // Clear input field
-                taskInput.value = "";
-            }
-        }
-    </script>
+        <button onclick="changeBackgroundColor()">Change Background Color</button>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sports News</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a> |
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>
